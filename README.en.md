@@ -1,78 +1,80 @@
 # 📦 OBS Cyber Backup Utility
 
+**OBS Cyber Backup Utility** is a lightweight Windows utility for backing up and restoring **OBS Studio** settings, scenes, profiles, and installed plugins.
 
+The application is designed for situations where you need to preserve your working OBS configuration before reinstalling Windows, moving OBS to another computer, or making major system changes.
 
-**OBS Cyber Backup Utility** is a compact Windows tool for backing up and restoring **OBS Studio** settings, scenes, profiles, and installed plugins[cite: 4].
+> ⚠️ **OBS Studio must be closed before starting a backup or restore operation.**
 
-The program is designed for situations where you need to save a working OBS configuration before reinstalling Windows, moving OBS to another computer, or making system changes[cite: 4].
+## 🖼️ Screenshot
 
-> ⚠️ OBS Studio must be closed before backing up or restoring[cite: 4].
+![OBS Cyber Backup](assets/screenshot.en.png)
 
 ## ✨ Features
 
-* 📦 Create OBS Studio backup in a ZIP archive[cite: 4]
-* 🔄 Restore settings from a ZIP backup[cite: 4]
-* 🎬 Backup OBS scenes, profiles, and settings[cite: 4]
-* 🔌 Save OBS plugins[cite: 4]
-* ☑️ Select components for backup[cite: 4]
-* 🛡️ Verify created ZIP archive after operation completion[cite: 4]
-* 📋 `backup_info.json` containing information about the created backup[cite: 4]
-* 🔍 Verify selected archive before restoring[cite: 4]
-* 🚫 Check if OBS Studio is running prior to operation[cite: 4]
-* 📊 Display operation progress[cite: 4]
-* 🔊 Audio notification upon successful completion[cite: 4]
-* 📝 Automatic logging[cite: 4]
-* 🌐 Dual language interface (Russian and English)[cite: 4]
-* 💾 Save application settings[cite: 4]
-* 🖥️ Support for running as a Python script and as a standalone Windows build[cite: 4]
+* 📦 Create a complete OBS Studio backup as a ZIP archive
+* 🔄 Restore settings from a ZIP backup
+* 🎬 Back up OBS scenes, profiles, and settings
+* 🔌 Back up OBS plugins
+* ☑️ Select which components to include in the backup
+* 🛡️ Verify the created ZIP archive after the backup is completed
+* 📋 Generate `backup_info.json` containing backup information
+* 🔍 Validate the selected archive before restoring
+* 🚫 Check whether OBS Studio is currently running
+* 📊 Display operation progress
+* 🔊 Play a sound notification after a successful operation
+* 📝 Automatically create application logs
+* 🌐 Russian and English interface
+* 💾 Save application settings
+* 🖥️ Support for both Python source execution and a prepared Windows build
 
-## 🗂️ What Can Be Saved
+## 🗂️ What Can Be Backed Up
 
-The program allows you to selectively choose the following components[cite: 4]:
+The application allows you to select the following components separately:
 
 ### AppData
 
-OBS Studio settings, scenes, and user profiles[cite: 4].
+OBS Studio user settings, scenes, and profiles:
 
 ```text
 %APPDATA%\obs-studio
-```[cite: 4]
+```
 
 ### ProgramData
 
-OBS Studio plugins[cite: 4]:
+OBS Studio plugins:
 
 ```text
 %PROGRAMDATA%\obs-studio\plugins
-```[cite: 4]
+```
 
 ### Program Files
 
-System-installed OBS Studio plugins[cite: 4]:
+System-installed OBS Studio plugins:
 
 ```text
 C:\Program Files\obs-studio\obs-plugins
-```[cite: 4]
+```
 
-This allows you to either perform a full OBS backup or save only the necessary components[cite: 4].
+This allows you to create either a **complete OBS backup** or save only the components you need.
 
 ## 📦 Backup Format
 
-Backups are created in the following format[cite: 4]:
+Backups are created in:
 
 ```text
 ZIP
-```[cite: 4]
+```
 
-An additional file is placed inside the archive[cite: 4]:
+The archive also contains:
 
 ```text
 backup_info.json
-```[cite: 4]
+```
 
-It stores information about the utility version, backup creation time, total file count, and selected components[cite: 4].
+This file stores information about the utility version, backup creation time, number of files, and selected components.
 
-Example[cite: 4]:
+Example:
 
 ```json
 {
@@ -84,35 +86,35 @@ Example[cite: 4]:
     "programdata_plugins": true,
     "programfiles_plugins": true
 }
-```[cite: 4]
+```
 
 ## 🔐 Backup Verification
 
-After creating the ZIP archive, the program verifies its contents[cite: 4].
+After creating a ZIP archive, the application automatically verifies its contents.
 
-If the archive is corrupted, the operation is considered failed[cite: 4].
+If the archive is corrupted or cannot be read correctly, the operation is considered unsuccessful.
 
-When restoring, the selected file is also verified before starting the operation[cite: 4].
+When restoring a backup, the selected archive is also checked before the restoration process begins.
 
-## 🚨 Restoration Safety
+## 🚨 Restore Safety
 
-Before restoring, the program checks[cite: 4]:
+Before restoring a backup, the application checks:
 
-* whether OBS Studio is running;[cite: 4]
-* if the selected file is a valid ZIP archive;[cite: 4]
-* presence of backup metadata;[cite: 4]
-* integrity of archive contents;[cite: 4]
-* write permissions for required system directories.[cite: 4]
+* whether OBS Studio is running;
+* whether the selected file is a valid ZIP archive;
+* whether backup information is present;
+* whether the archive contents can be read correctly;
+* whether the required Windows directories are writable.
 
-If OBS Studio is running, the program will ask you to close it first[cite: 4].
+If OBS Studio is running, the application will ask you to close it first.
 
-Modifying files in system directories may require running the application **as Administrator**[cite: 4].
+> ⚠️ **Administrator privileges may be required** to modify files in protected Windows system directories.
 
-## 💻 Transferring OBS to Another PC
+## 💻 Move OBS to Another Computer
 
-The program includes a dedicated **"Transfer OBS to another PC"** feature that guides you through using the created backup to transfer your setup[cite: 4].
+The application includes a dedicated **"Move OBS to Another PC"** function that helps you use an existing backup to transfer your OBS configuration to another computer.
 
-General Concept[cite: 4]:
+The general process:
 
 ```text
 Old PC
@@ -123,93 +125,89 @@ Old PC
    └── Plugins
           │
           ▼
-     ZIP Backup
+      ZIP Backup
           │
           ▼
-      New PC
+       New PC
           │
           └── Restore
-```[cite: 4]
+```
+
+This makes it easier to move your existing OBS environment without manually copying individual folders and files.
 
 ## 📝 Logs
 
-When running, the program creates a directory[cite: 4]:
+The application automatically creates a:
 
 ```text
 logs
-```[cite: 4]
+```
 
-It stores daily log files[cite: 4]:
+folder when necessary.
+
+Daily log files are stored using the following format:
 
 ```text
 app_YYYY-MM-DD.log
-```[cite: 4]
+```
 
-Logs help identify the root cause of errors if backing up or restoring fails[cite: 4].
+Logs can help identify the cause of an error if a backup or restore operation fails.
 
 ## 🔊 Completion Notification
 
-After a backup is successfully created, the program plays an audio notification[cite: 4].
+After successfully creating a backup, the application plays a sound notification.
 
-This is particularly convenient when dealing with a large number of scenes, profiles, and plugins, where archive creation might take longer[cite: 4].
+This can be especially useful when working with a large number of scenes, profiles, and plugins, where creating the archive may take some time.
 
 ## 🖥️ Interface
 
-The program features a modern dark interface built with **CustomTkinter**[cite: 4].
+The application uses a modern dark interface built with **CustomTkinter**.
 
-Key UI elements[cite: 4]:
+Main interface features include:
 
-* language selection;[cite: 4]
-* component selection;[cite: 4]
-* backup directory selection;[cite: 4]
-* progress indicator;[cite: 4]
-* backup creation;[cite: 4]
-* restoration;[cite: 4]
-* open backup folder;[cite: 4]
-* transfer OBS to another PC.[cite: 4]
-
----
-
-## 🖼️ Screenshot
-
-![OBS Cyber Backup](assets/screenshot.en.png)
-
----
+* language selection;
+* backup component selection;
+* backup folder selection;
+* progress indicator;
+* backup creation;
+* backup restoration;
+* opening the backup folder;
+* moving OBS to another computer.
 
 ## ⚙️ Requirements
 
-To run from source code[cite: 4]:
+To run the source code, you need:
 
-* Windows 10/11[cite: 4]
-* Python 3.x[cite: 4]
-* CustomTkinter[cite: 4]
+* Windows 10/11
+* Python 3.x
+* CustomTkinter
 
-Install dependency[cite: 4]:
+Install the required dependency:
 
 ```bash
 pip install customtkinter
-```[cite: 4]
+```
 
 ## ▶️ Running from Source
 
-Clone the repository[cite: 4]:
+Clone the repository:
 
 ```bash
-git clone https://github.com/cybercraftt/OBS-Cyber-Backup.git
+git clone https://github.com/YOUR_USERNAME/OBS-Cyber-Backup.git
 cd OBS-Cyber-Backup
-```[cite: 4]
+```
 
-Run the program[cite: 4]:
+Run the application:
 
 ```bash
 python "obs_cyber_backup.py"
-```[cite: 4]
+```
 
-If your Python file uses a different name, use the corresponding filename from your repository[cite: 4].
+If the Python file has a different name, use the current filename provided in the repository.
 
 ## 📁 Project Structure
 
-Sample structure[cite: 4]:
+Example project structure:
 
 ```text
 OBS-Cyber-Backup/
@@ -222,50 +220,50 @@ OBS-Cyber-Backup/
 ├── Backups/
 │
 └── logs/
-```[cite: 4]
+```
 
-The `Backups` and `logs` directories are generated automatically by the program as needed[cite: 4].
+The `Backups` and `logs` folders are created automatically by the application when needed.
 
 ## 🛠️ Version
 
-Current Version[cite: 4]:
+Current version:
 
-**v1.1.0**[cite: 4]
+**v1.1.0**
 
-Key changes in version 1.1.0[cite: 4]:
+### What's New in v1.1.0
 
-* added OBS running check;[cite: 4]
-* added backup metadata information;[cite: 4]
-* added ZIP verification post-creation;[cite: 4]
-* added archive verification pre-restoration;[cite: 4]
-* added selective component backup;[cite: 4]
-* added logging functionality;[cite: 4]
-* added detailed error modal window;[cite: 4]
-* added audio notification;[cite: 4]
-* added guided PC transfer wizard.[cite: 4]
+* Added a check for whether OBS Studio is running
+* Added backup metadata
+* Added ZIP verification after backup creation
+* Added archive validation before restoration
+* Added component selection
+* Added application logging
+* Added an extended error window
+* Added completion sound notifications
+* Added a helper function for moving OBS to another computer
 
 ## ⚠️ Important
 
-This program interacts directly with OBS Studio directories[cite: 4].
+The application works directly with OBS Studio directories.
 
-It is recommended to maintain an independent copy of your current OBS settings before performing a restore[cite: 4].
+Before restoring a backup, it is recommended to create a separate copy of your current OBS configuration.
 
-Pay special attention when restoring plugins, as different versions of OBS Studio and third-party plugins may be incompatible with each other[cite: 4].
+Special care should be taken when restoring plugins, as different versions of OBS Studio and third-party plugins may not be compatible with each other.
 
-This program is not a replacement for standard Windows backup solutions and is specifically designed for convenient saving of OBS Studio configurations[cite: 4].
+This application does not replace the standard Windows backup tools. It is specifically designed to make backing up and restoring an **OBS Studio configuration** easier.
 
 ## ❤️ Support the Project
 
-If this project helped you and you would like to support future development[cite: 4]:
+If you find the application useful and would like to support further development:
 
-* YouTube: **Cyber Craft**[cite: 4]
-* Telegram: **CyberCraftLab**[cite: 4]
-* Boosty: **Cyber Craft**[cite: 4]
+* YouTube: **Cyber Craft**
+* Telegram: **CyberCraftLab**
+* Boosty: **Cyber Craft**
 
 ---
 
 ## 📜 License
 
-This project is distributed under the terms of the license specified in the [`LICENSE`](LICENSE) file[cite: 4].
+This project is distributed under the license specified in the [`LICENSE`](LICENSE) file.
 
-If the repository uses the MIT License, include a `LICENSE` file containing the license text[cite: 4].
+If the repository uses the **MIT License**, add a `LICENSE` file containing the full MIT License text.
