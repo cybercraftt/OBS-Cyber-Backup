@@ -172,7 +172,7 @@ Key UI elements[cite: 4]:
 
 ## 🖼️ Screenshot
 
-![OBS Cyber Backup](https://raw.githubusercontent.com/cybercraftt/Smart-Shutdown/e0b20300db21105a2e92c8b7a73e326cdf52fa94/assets/screenshot.png)[cite: 4]
+![OBS Cyber Backup](assets/screenshot.en.png)
 
 ---
 
