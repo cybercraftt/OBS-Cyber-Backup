@@ -172,7 +172,7 @@ app_YYYY-MM-DD.log
 
 ## 🖼️ Скриншот 
 
-![OBS Cyber Backup](https://raw.githubusercontent.com/cybercraftt/Smart-Shutdown/e0b20300db21105a2e92c8b7a73e326cdf52fa94/assets/screenshot.png)
+![OBS Cyber Backup](assets/screenshot.png)
 
 ---
 
