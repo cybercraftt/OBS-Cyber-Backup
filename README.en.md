@@ -258,7 +258,7 @@ If you find the application useful and would like to support further development
 
 * YouTube: **Cyber Craft**
 * Telegram: **CyberCraftLab**
-* Boosty: **Cyber Craft**
+* Boosty: **https://boosty.to/cyber_craft**
 
 ---
 
