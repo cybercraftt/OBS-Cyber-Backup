@@ -443,7 +443,7 @@ class OBSCyberBackupApp(ctk.CTk):
         boosty_btn = ctk.CTkButton(
             btn_box, text="Boosty", font=("Segoe UI", 10, "bold"), width=85, height=24, corner_radius=6,
             fg_color="#1E202E", hover_color="#282A3D", text_color="#FB923C", border_width=1, border_color="#282A3D",
-            command=lambda: os.system("start https://boosty.to/cyber_craft")
+            command=lambda: os.system("start https://boosty.to/dufna")
         )
         boosty_btn.pack(side="left", padx=2)
 
